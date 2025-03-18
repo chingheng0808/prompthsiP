@@ -23,21 +23,28 @@
     <a target="_blank" href="https://drive.google.com/file/d/1H7NlKOLFKuN-wqGAizGKokydr4VuJ-Gg/view" class="btn btn-success">Model</a>
   </div>
 
-  <div class="figure" style="width: 45%;" >
-    <img src="figures/framework.png">
+  <div class="figure" style="width: 40%;" >
+    <img src="figures/Comparison.jpg">
 
-    <p style="text-align: left">The All-in-One and universal HSI restoration framework with text-prompt guidance, named PromptHSI, for composite degradation Specifically, informative textual features extracted by pre-trained vision-language model are fed into adapter and then decomposed into an intensity and bias embeddings for degradation-specific restoration with effective cascade guidance.</p>
+    <p style="text-align: left">Performance comparison between All-in-One and HSI restoration methods on the AVIRIS dataset. The proposed <strong>PromptHSI</strong> offers leading performance and controllability while retaining a compact model size.</p>
 
   </div>
 
   <div class="content">
     <h2><b>Abstract</b></h2>
     <p>
-      Recent developments in All-in-One (AiO) RGB image restoration and prompt learning have enabled the representation of distinct degradations through prompts, allowing degraded images to be effectively addressed by a single restoration model. However, this paradigm faces significant challenges when transferring to hyperspectral image (HSI) restoration tasks due to: 1) the domain gap between RGB and HSI features and difference on their structures, 2) information loss in visual prompts under severe composite degradations, and 3) difficulties in capturing HSI-specific degradation representations through text prompts. To address these challenges, we propose \textbf{PromptHSI}, the first universal AiO HSI restoration framework. By leveraging the frequency-aware feature modulation based on characteristics of HSI degradations, we decompose text prompts into intensity and bias controllers to effectively guide the restoration process while avoiding domain gaps. Our unified architecture excels at both fine-grained recovery and global information restoration tasks. Experimental results demonstrate superior performance under various degradation combinations, indicating great potential for practical remote sensing applications.
+      Recent advances in All-in-One (AiO) RGB image restoration have demonstrated the effectiveness of prompt learning in handling multiple degradations within a single model. However, extending these approaches to hyperspectral image (HSI) restoration is challenging due to the domain gap between RGB and HSI features, information loss in visual prompts under severe composite degradations, and difficulties in capturing HSI-specific degradation patterns via text prompts. In this paper, we propose <strong>PromptHSI</strong>, the first universal AiO HSI restoration framework that addresses these challenges. By incorporating frequency-aware feature modulation—which utilizes frequency analysis to narrow down the restoration search space—and employing vision-language model (VLM)-guided prompt learning, our approach decomposes text prompts into intensity and bias controllers that effectively guide the restoration process while mitigating domain discrepancies. Extensive experiments demonstrate that our unified architecture excels at both fine-grained recovery and global information restoration across diverse degradation scenarios, highlighting its significant potential for practical remote sensing applications. The source code will be made publicly available.
     </p>
 
+    <div class="figure" >
+      <img src="figures/freq-analysis.png">
+  
+      <p style="text-align: center; font-size: 0.9em"><b>A diagram illustrating our proposed strategy</b>, where integrating prompt guidance with frequency modulation facilitates the adaptive selection of &lambda; and &mu;, enhancing HSI restoration under various degradation types. This mechanism encourages the model to efficiently converge toward optimal parameters.</p>
+  
+    </div>
+
     <div class="figure">
-      <img src="figures/arch.jpg">
+      <img src="figures/arch.png">
   
       <p style="text-align: center; font-size: 0.9em"><b>The architecture of the proposed PromptHSI</b>, which is designed to tackle the composite degradations within a single universal model.</p>
   
